@@ -19,13 +19,12 @@ namespace TutorialApp
             
             SetContentView(Resource.Layout.activity_main);
 
-            
             mListView = FindViewById<ListView>(Resource.Id.myListView);
 
             mItems = new List<Person>();
-            mItems.Add(new Person { FirstName = "Joe", LastName = "Müller", Age = "16", Gender = "Male" });
-            mItems.Add(new Person { FirstName = "Hans", LastName = "Hunzig", Age = "23", Gender = "Male" });
-            mItems.Add(new Person { FirstName = "Mathilde", LastName = "Habsburg", Age = "43", Gender = "Female" });
+            mItems.Add(new Person { FirstName = "Joe", LastName = "Smith", Age = "22", Gender = "Male" });
+            mItems.Add(new Person { FirstName = "Tom", LastName = "Tom", Age = "35", Gender = "Male" });
+            mItems.Add(new Person { FirstName = "Sally", LastName = "Susan", Age = "88", Gender = "Female" });
 
             MyListViewAdapter adapter = new MyListViewAdapter(this, mItems);
 
