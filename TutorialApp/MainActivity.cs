@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using Console = System.Console;
 
 namespace TutorialApp
 {
@@ -29,8 +30,29 @@ namespace TutorialApp
             MyListViewAdapter adapter = new MyListViewAdapter(this, mItems);
 
             mListView.Adapter = adapter;
+            
+            mListView.ItemClick += mListView_ItemClick;
+            mListView.ItemLongClick += mListView_ItemLongClick;
+
+            mListView.ItemClick += mListView_ItemClick2;
 
         }
+
+        private void mListView_ItemClick2(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Console.WriteLine("Second Method");
+        }
+
+        private void mListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
+        {
+            Console.WriteLine(mItems[e.Position].LastName);
+        }
+
+        private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Console.WriteLine(mItems[e.Position].FirstName);
+        }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
