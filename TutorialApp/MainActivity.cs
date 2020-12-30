@@ -19,6 +19,7 @@ namespace TutorialApp
             
             SetContentView(Resource.Layout.activity_main);
 
+            
             mListView = FindViewById<ListView>(Resource.Id.myListView);
 
             mItems = new List<Person>();
